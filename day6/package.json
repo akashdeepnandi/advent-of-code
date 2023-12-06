@@ -1,0 +1,17 @@
+{
+  "name": "day6",
+  "version": "1.0.0",
+  "description": "- [TOC](#toc) - [About](#about)     - [Advent of Code 2023 Day 2 --- Day 6: Wait For It ---](#advent-of-code-2023-day-2-----day-6-wait-for-it----)         - [Solutions](#solutions)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

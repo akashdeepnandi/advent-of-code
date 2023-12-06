@@ -18,16 +18,11 @@ func solveQuadratic(lines []string) {
 	matches, _, _ = reMatch("(\\d+)", lines[1])
 	distances := stringToIntSlice(matches)
 
-	waysToWin := []int{}
+	part1MarginError := 1
 	for i, time := range times {
 		distance := distances[i]
 		wins := getWinsUsingRoots(float64(time), float64(distance))
-		waysToWin = append(waysToWin, wins)
-	}
-
-	part1MarginError := 1
-	for _, ways := range waysToWin {
-		part1MarginError *= ways
+		part1MarginError *= wins
 	}
 
 	time := getInputNum(lines[0])

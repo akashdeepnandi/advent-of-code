@@ -3,7 +3,7 @@
 import fs from "fs"
 
 // SETUP
-const INPUT = false ? "./sinput" : "./input"
+const INPUT = true ? "./sinput" : "./input"
 const file = fs.readFileSync(INPUT, { encoding: "utf8" });
 
 const lines = file.split("\n");
