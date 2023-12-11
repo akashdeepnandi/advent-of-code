@@ -30,13 +30,13 @@ def find_distance_sum(expansion_rate):
         for j in range(i + 1, len(galaxies)):
             (r2, c2) = galaxies[j]
             d = abs(r1 - r2) + abs(c1 - c2) # using manhattan distance
+            minr, maxr = get_min_max(r1, r2)
+            minc, maxc = get_min_max(c1, c2)
             for er in empty_rows:
-                minr, maxr = get_min_max(r1, r2)
                 if er > minr and er < maxr:
                     d += expansion_rate - 1
 
             for ec in empty_cols:
-                minc, maxc = get_min_max(c1, c2)
                 if ec > minc and ec < maxc:
                     d += expansion_rate - 1
             sum += d
