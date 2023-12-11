@@ -11,7 +11,7 @@ for c in range(COLS):
     empty = True
     for r in range(ROWS):
         row = grid[r]
-        if "#" not in row: # no # in row, empty
+        if "#" not in row and r not in empty_rows: # no # in row, empty
             empty_rows.append(r)
         if grid[r][c] == "#": # check the character is galaxy, put it in list
             galaxies.append((r, c))
