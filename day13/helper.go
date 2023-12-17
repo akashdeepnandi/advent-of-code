@@ -1,8 +1,10 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"regexp"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -122,4 +124,53 @@ func getMinMax(a, b int) (int, int) {
 		return b, a
 	}
 	return a, b
+}
+
+func gridPrint[T any](g [][]T) {
+	R := len(g)
+	C := len(g[0])
+	for r := 0; r < R; r++ {
+		for c := 0; c < C; c++ {
+			fmt.Print(g[r][c])
+		}
+		fmt.Println()
+	}
+
+	fmt.Println()
+}
+
+func gridTranspose[T any](g [][]T) [][]T {
+	R := len(g)
+	C := len(g[0])
+	ng := make([][]T, C)
+	for c := 0; c < C; c++ {
+		row := make([]T, R)
+		for r := 0; r < R; r++ {
+			row[r] = g[r][c]
+		}
+		ng[c] = row
+	}
+
+	return ng
+}
+
+func reverseSlice[T any](original []T) []T {
+	reversed := make([]T, len(original))
+	for i, j := len(original)-1, 0; i >= 0; i, j = i-1, j+1 {
+		reversed[j] = original[i]
+	}
+	return reversed
+}
+
+func sortString(input string, reverse bool) string {
+	// Convert the string to a slice of characters
+	chars := strings.Split(input, "")
+	// Sort the slice of characters
+	sort.Strings(chars)
+	// Convert the sorted slice of characters back to a string
+	if reverse {
+		reverseSlice[string](chars)
+	}
+	sortedString := strings.Join(chars, "")
+	return sortedString
 }

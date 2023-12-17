@@ -144,7 +144,7 @@ func gridTranspose[T any](g [][]T) [][]T {
 	C := len(g[0])
 	ng := make([][]T, C)
 	for c := 0; c < C; c++ {
-		row := make([]T, C)
+		row := make([]T, R)
 		for r := 0; r < R; r++ {
 			row[r] = g[r][c]
 		}

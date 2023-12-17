@@ -47,14 +47,14 @@ func convertToInt(s string) int {
 func readFile(fname string) string {
 	data, err := os.ReadFile(fname)
 	check(err)
-	return strings.TrimSpace(string(data))
+	return string(data)
 }
 
 func readLines(fname string) []string {
 	data := readFile(fname)
 	lines := strings.Split(data, "\n")
 	// popping off the blank line
-	return lines
+	return lines[:len(lines)-1]
 }
 
 func stringTwoSplit(s string, sep string) (string, string) {
@@ -122,4 +122,22 @@ func getMinMax(a, b int) (int, int) {
 		return b, a
 	}
 	return a, b
+}
+
+func CopySlice[T any](src []T) []T {
+	dst := make([]T, len(src))
+	copy(dst, src)
+	return dst
+}
+
+func convertSlice[T any, U any](t []T, convertor func(T) U) []U {
+	if len(t) == 0 {
+		o := make([]U, 0)
+		return o
+	}
+	o := make([]U, 0, len(t))
+	for _, v := range t {
+		o = append(o, convertor(v))
+	}
+	return o
 }
