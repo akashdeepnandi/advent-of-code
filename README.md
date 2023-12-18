@@ -14,3 +14,9 @@ This year, I will be trying to solve the problems primarily in Golang but also s
 
 ## References
 - [Golang Performance Benchmark](https://blog.logrocket.com/benchmarking-golang-improve-function-performance/)
+
+## TODO
+- Review
+- Day5
+- Day10
+- Day12
