@@ -1,10 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"regexp"
-	"sort"
 	"strconv"
 	"strings"
 )
@@ -49,14 +47,14 @@ func convertToInt(s string) int {
 func readFile(fname string) string {
 	data, err := os.ReadFile(fname)
 	check(err)
-	return strings.TrimSpace(string(data))
+	return string(data)
 }
 
 func readLines(fname string) []string {
 	data := readFile(fname)
 	lines := strings.Split(data, "\n")
 	// popping off the blank line
-	return lines
+	return lines[:len(lines)-1]
 }
 
 func stringTwoSplit(s string, sep string) (string, string) {
@@ -110,66 +108,4 @@ func stringToIntSlice(s []string) []int {
 	}
 
 	return iSlice
-}
-
-func Abs(x int) int {
-	if x > 0 {
-		return x
-	}
-	return -x
-}
-
-func getMinMax(a, b int) (int, int) {
-	if a > b {
-		return b, a
-	}
-	return a, b
-}
-
-func gridPrint[T any](g [][]T) {
-	R := len(g)
-	C := len(g[0])
-	for r := 0; r < R; r++ {
-		for c := 0; c < C; c++ {
-			fmt.Print(g[r][c])
-		}
-		fmt.Println()
-	}
-
-	fmt.Println()
-}
-
-func gridTranspose[T any](g [][]T) [][]T {
-	R := len(g)
-	C := len(g[0])
-	ng := make([][]T, C)
-	for c := 0; c < C; c++ {
-		row := make([]T, R)
-		for r := 0; r < R; r++ {
-			row[r] = g[r][c]
-		}
-		ng[c] = row
-	}
-
-	return ng
-}
-
-func reverseSlice[T any](s []T) {
-	length := len(s)
-	for i := 0; i < length/2; i++ {
-		s[i], s[length-i-1] = s[length-i-1], s[i]
-	}
-}
-
-func sortString(input string, reverse bool) string {
-	// Convert the string to a slice of characters
-	chars := strings.Split(input, "")
-	// Sort the slice of characters
-	sort.Strings(chars)
-	// Convert the sorted slice of characters back to a string
-	if reverse {
-		reverseSlice[string](chars)
-	}
-	sortedString := strings.Join(chars, "")
-	return sortedString
 }

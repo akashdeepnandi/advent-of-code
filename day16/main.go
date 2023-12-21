@@ -21,13 +21,6 @@ type Pos struct {
 	dc int
 }
 
-func (p *Pos) dirIsVertical() bool {
-	return p.dr != 0
-}
-
-func (p *Pos) dirIsHorizontal() bool {
-	return p.dc != 0
-}
 
 func (p *Pos) next(grid [][]string) []Pos {
 	R := len(grid)
