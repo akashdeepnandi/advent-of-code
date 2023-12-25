@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
   }
 
   vector<string> lines = read_lines(argv[1]);
-  for (const auto line : lines) {
+  for (const auto& line : lines) {
     cout << line << endl;
   }
 
