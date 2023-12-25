@@ -1,12 +1,9 @@
 # TOC
 
 - [TOC](#toc)
-- [About](#about)
-        - [Solutions](#solutions)
+- [Solutions](#solutions)
 
-# About
-
-### Solutions
+# Solutions
 - [Golang](golang)
 - [JavaScript](javascript)
 - [Python](python)

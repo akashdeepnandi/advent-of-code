@@ -1,13 +1,11 @@
 # TOC
 
 - [TOC](#toc)
-- [About](#about)
-        - [Solutions](#solutions)
+- [Solutions](#solutions)
 
-# About
-
-### Solutions
-- [Golang](main.go)
-- [JavaScript](index.js)
-- [Python](solve.py)
+# Solutions
+- [Golang](golang)
+- [JavaScript](javascript)
+- [Python](python)
+- [C++](cpp)
 
