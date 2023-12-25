@@ -7,7 +7,8 @@
 # About
 
 ### Solutions
-- [Golang](main.go)
-- [JavaScript](index.js)
-- [Python](solve.py)
+- [Golang](golang)
+- [JavaScript](javascript)
+- [Python](python)
+- [C++](cpp)
 
