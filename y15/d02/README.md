@@ -8,4 +8,5 @@
 - [JavaScript](javascript)
 - [Python](python)
 - [C++](cpp)
+- [Rust](rust)
 
