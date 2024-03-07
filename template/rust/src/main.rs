@@ -1,18 +1,13 @@
-mod helper;
-
-use helper::read_lines;
 use std::env;
+use std::fs::read_to_string;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    if args.len() > 1 {
-        let file = &args[1];
-        println!("File: {}", file);
-        let lines = read_lines(file);
-        solve(lines);
-    } else {
-        println!("No file name provided");
-    }
+    let lines: Vec<String> = read_to_string(env::args().nth(1).expect("Error: Missing file name"))
+        .unwrap()
+        .lines()
+        .map(String::from)
+        .collect();
+    solve(lines);
 }
 
 fn solve(lines: Vec<String>) {
