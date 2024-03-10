@@ -30,6 +30,7 @@ func part1(lines []string) {
 	sCount := 0
 	for _, line := range lines {
 		vowels, _, _ := reMatch("(a|e|i|o|u)", line)
+
 		if len(vowels) < 3 { // check for vowels
 			continue
 		}
