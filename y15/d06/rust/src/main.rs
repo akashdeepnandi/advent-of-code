@@ -35,8 +35,12 @@ fn solve(lines: Vec<String>) {
             .map(|d| d.parse::<usize>().unwrap())
             .collect();
 
-        for row in lights.iter_mut().take(end[0] + 1).skip(start[0]) {
-            for elem in row.iter_mut().take(end[1] + 1).skip(start[1]) {
+        lights
+            .iter_mut()
+            .take(end[0] + 1)
+            .skip(start[0])
+            .flat_map(|row| row.iter_mut().take(end[1] + 1).skip(start[1]))
+            .for_each(|elem| {
                 *elem = match command {
                     Instruction::TurnOff => 0,
                     Instruction::TurnOn => 1,
@@ -46,8 +50,7 @@ fn solve(lines: Vec<String>) {
                         _ => 1,
                     },
                 }
-            }
-        }
+            });
     }
 
     let part1: i32 = lights.iter().flat_map(|r| r.iter()).sum();
@@ -74,15 +77,18 @@ fn solve(lines: Vec<String>) {
             .map(|d| d.parse::<usize>().unwrap())
             .collect();
 
-        for row in lights.iter_mut().take(end[0] + 1).skip(start[0]) {
-            for elem in row.iter_mut().take(end[1] + 1).skip(start[1]) {
+        lights
+            .iter_mut()
+            .take(end[0] + 1)
+            .skip(start[0])
+            .flat_map(|row| row.iter_mut().take(end[1] + 1).skip(start[1]))
+            .for_each(|elem| {
                 *elem = match command {
                     Instruction::TurnOff => cmp::max(*elem - 1, 0),
                     Instruction::TurnOn => *elem + 1,
                     Instruction::Toggle => *elem + 2,
                 }
-            }
-        }
+            });
     }
 
     let part2: i32 = lights.iter().flat_map(|r| r.iter()).sum();
