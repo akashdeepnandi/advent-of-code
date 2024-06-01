@@ -25,11 +25,11 @@ func solve(lines []string) {
 	p2 := 0
 	for _, line := range lines {
 		curLen := len(line)
-		x, _ := strconv.Unquote(line)
-		p1 += curLen - len(x)
+		unquoted, _ := strconv.Unquote(line)
+		p1 += curLen - len(unquoted)
 
-		y := strconv.Quote(line)
-		p2 += len(y) - curLen
+		quoted := strconv.Quote(line)
+		p2 += len(quoted) - curLen
 	}
 
 	fmt.Println("Part 1: ", p1)
