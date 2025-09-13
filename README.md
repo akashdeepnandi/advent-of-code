@@ -1,62 +1,90 @@
-# TOC
+# 🎄 Advent of Code
 
-- [TOC](#toc)
-- [About](#about)
-    - [References](#references)
+## 📑 Table of Contents
 
-# About
+* [About](#about)
+* [Languages](#languages)
+* [Usage](#usage)
+* [References](#references)
 
-This repository is tracking all the solutions of [Advent of Code](https://adventofcode.com).
-This year, I will be trying to solve the problems primarily in Golang but also some other languages such as:
-- Bash
-- JavaScript
-- Python
-- CPP
-- Rust
+---
 
-## References
-- [Golang Performance Benchmark](https://blog.logrocket.com/benchmarking-golang-improve-function-performance/)
+## 📖 About
 
-## TODO
-- Review
-- Day5
-- Day10
-- Day12
+This repository tracks my solutions for [Advent of Code](https://adventofcode.com).
 
+My primary language of choice this year is **Golang**, but I’m also experimenting with solutions in other languages to compare performance and styles.
 
-## Commands:
+---
 
-JavaScript:
+## 💻 Languages
+
+| Language   | Badge                                                                                |
+| ---------- | ------------------------------------------------------------------------------------ |
+| Go         | ![Go](https://img.shields.io/badge/Go-1.22-blue?logo=go)                             |
+| Bash       | ![Bash](https://img.shields.io/badge/Bash-Shell-lightgrey?logo=gnu-bash)             |
+| JavaScript | ![JavaScript](https://img.shields.io/badge/JavaScript-ES2023-yellow?logo=javascript) |
+| Python     | ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)                 |
+| C++        | ![C++](https://img.shields.io/badge/C++-20-orange?logo=cplusplus)                    |
+| Rust       | ![Rust](https://img.shields.io/badge/Rust-1.80-red?logo=rust)                        |
+
+Each day’s solution is organized by **year/day/language**, for example:
+
+```
+y15/d01/golang/
+y15/d01/python/
+```
+
+---
+
+## ▶️ Usage
+
+Run solutions in different languages with the following commands:
+
+### JavaScript ![JavaScript](https://img.shields.io/badge/JavaScript-ES2023-yellow?logo=javascript)
 
 ```bash
 cd yYY/dDD/javascript
 node index.js input
 ```
 
-Golang:
+### Go ![Go](https://img.shields.io/badge/Go-1.22-blue?logo=go)
 
 ```bash
 cd yYY/dDD/golang
 go run . -f input
 ```
 
-Python:
+### Python ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
 
 ```bash
 cd yYY/dDD/python
 python solve.py input
 ```
 
-Rust:
+### Rust ![Rust](https://img.shields.io/badge/Rust-1.80-red?logo=rust)
 
 ```bash
 cd yYY/dDD/rust
 cargo run input
 ```
 
-CPP:
+### C++ ![C++](https://img.shields.io/badge/C++-20-orange?logo=cplusplus)
 
 ```bash
 cd yYY/dDD/cpp
-g++ main.cpp helper.cpp && ./a.out input
+g++ main.cpp helper.cpp -o solve && ./solve input
 ```
+
+### Bash ![Bash](https://img.shields.io/badge/Bash-Shell-lightgrey?logo=gnu-bash)
+
+```bash
+cd yYY/dDD/bash
+bash solve.sh input
+```
+
+---
+
+## 📚 References
+
+* [Golang Performance Benchmark](https://blog.logrocket.com/benchmarking-golang-improve-function-performance/)
