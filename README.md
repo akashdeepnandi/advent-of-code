@@ -2,10 +2,11 @@
 
 ## 📑 Table of Contents
 
-* [About](#about)
-* [Languages](#languages)
-* [Usage](#usage)
-* [References](#references)
+- [About](#about)
+- [Languages](#languages)
+- [Coding Principles](#coding-principles)
+- [Usage](#usage)
+- [References](#references)
 
 ---
 
@@ -31,9 +32,34 @@ My primary language of choice this year is **Golang**, but I’m also experiment
 Each day’s solution is organized by **year/day/language**, for example:
 
 ```
+
 y15/d01/golang/
 y15/d01/python/
+
 ```
+
+---
+
+## 🧭 Coding Principles
+
+When solving problems across different languages, I follow a few guiding principles:
+
+- **Readability over cleverness**  
+  Code should be easy to understand. I avoid overly dense one-liners or language tricks that hurt clarity.
+
+- **Core logic written manually**  
+  For the main algorithm, I don’t lean on built-in shortcuts (e.g., regex magic or library functions) — the point is to _learn by implementing_.  
+  Utility functions like `min`/`max` are fair use.
+
+- **Fair optimizations only**  
+  I won’t over-optimize unless it’s simple and natural (e.g., using a `byte slice` instead of repeated string concatenation).  
+  Extreme micro-optimizations are avoided.
+
+- **Consistent naming**  
+  Functions and variables are named for clarity and intent, not brevity.
+
+- **Cross-language comparability**  
+  I try to keep the structure of solutions similar across languages so I can study differences in style, idioms, and performance.
 
 ---
 
@@ -87,4 +113,4 @@ bash solve.sh input
 
 ## 📚 References
 
-* [Golang Performance Benchmark](https://blog.logrocket.com/benchmarking-golang-improve-function-performance/)
+- [Golang Performance Benchmark](https://blog.logrocket.com/benchmarking-golang-improve-function-performance/)
