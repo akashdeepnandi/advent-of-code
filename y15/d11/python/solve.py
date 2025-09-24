@@ -37,7 +37,6 @@ def increment_password(password: str):
 
 
 def validate_password(password):
-    has_valid_letters = True
     three_straight = False
     last_letter = password[0]
     last_index = ltoi[last_letter]
@@ -50,7 +49,7 @@ def validate_password(password):
 
         # Checks invalid letters
         if current_letter in invalid_letters:
-            has_valid_letters = False
+            return False
 
         # Checks three straight letters
         if count == 3:
@@ -59,14 +58,15 @@ def validate_password(password):
             count += 1
         else:
             count = 1
-        last_index = current_index
 
         # Collects pairs or more
         if last_letter == current_letter:
             pair_count[current_letter] += 1
         else:
             pair_count[current_letter] = 1
+
         last_letter = current_letter
+        last_index = current_index
 
     has_double_pairs = False
     pairs = 0
@@ -77,7 +77,7 @@ def validate_password(password):
             has_double_pairs = True
             break
 
-    return three_straight and has_valid_letters and has_double_pairs
+    return three_straight and has_double_pairs
 
 
 for i in range(10000000):
